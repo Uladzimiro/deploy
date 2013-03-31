@@ -1,9 +1,11 @@
+require 'rvm/capistrano'
 require "bundler/capistrano"
 
 server "127.0.0.1", :web, :app, :db, primary: true
 
 set :application, "deploy"
 set :user, "deployer"
+set :port, "3022"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
